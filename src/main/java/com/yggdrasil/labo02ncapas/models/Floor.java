@@ -1,4 +1,4 @@
-package com.yggdrasil.labo02ncapas.model;
+package com.yggdrasil.labo02ncapas.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,21 +7,23 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Royalty {
+public class Floor {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idRoyalty;
+    private UUID idFloor;
 
     @Column
     private String name;
 
     @Column
-    private String description;
+    private String colorButton;
 
-    @Column
-    private int pointsNeeded;
+    @ManyToOne
+    @JoinColumn(name = "branch_id", nullable = false, foreignKey = @ForeignKey(name = "FK_floor_branch"))
+    private Branch branch;
 }

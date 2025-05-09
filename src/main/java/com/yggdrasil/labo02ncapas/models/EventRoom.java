@@ -1,30 +1,31 @@
-package com.yggdrasil.labo02ncapas.model;
+package com.yggdrasil.labo02ncapas.models;
 
 import jakarta.persistence.*;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Floor {
+public class EventRoom {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idFloor;
+    private UUID idEventRoom;
 
     @Column
     private String name;
 
     @Column
-    private String colorButton;
+    private int capacity;
+
+    @Column
+    private String description;
 
     @ManyToOne
-    @JoinColumn(name = "branch_id", nullable = false, foreignKey = @ForeignKey(name = "FK_floor_branch"))
+    @JoinColumn(name = "branch_id", nullable = false, foreignKey = @ForeignKey(name = "FK_event_room_branch"))
     private Branch branch;
 }

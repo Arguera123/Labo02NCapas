@@ -1,4 +1,4 @@
-package com.yggdrasil.labo02ncapas.model;
+package com.yggdrasil.labo02ncapas.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity

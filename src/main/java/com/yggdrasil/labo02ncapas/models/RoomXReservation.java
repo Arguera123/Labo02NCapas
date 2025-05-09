@@ -1,4 +1,4 @@
-package com.yggdrasil.labo02ncapas.model;
+package com.yggdrasil.labo02ncapas.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

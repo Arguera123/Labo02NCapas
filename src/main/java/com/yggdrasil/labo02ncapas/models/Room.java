@@ -1,4 +1,4 @@
-package com.yggdrasil.labo02ncapas.model;
+package com.yggdrasil.labo02ncapas.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,21 +11,18 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EventRoom {
+public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idEventRoom;
+    private UUID idRoom;
 
     @Column
     private String name;
 
     @Column
-    private int capacity;
-
-    @Column
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "branch_id", nullable = false, foreignKey = @ForeignKey(name = "FK_event_room_branch"))
-    private Branch branch;
+    @JoinColumn(name = "floor_id", nullable = false, foreignKey = @ForeignKey(name = "FK_room_floor"))
+    private Floor floor;
 }

@@ -1,28 +1,26 @@
-package com.yggdrasil.labo02ncapas.model;
+package com.yggdrasil.labo02ncapas.models;
 
 import jakarta.persistence.*;
+
+import java.util.UUID;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Room {
+public class Branch {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idRoom;
+    private UUID idBranch;
 
     @Column
     private String name;
 
     @Column
-    private String description;
-
-    @ManyToOne
-    @JoinColumn(name = "floor_id", nullable = false, foreignKey = @ForeignKey(name = "FK_room_floor"))
-    private Floor floor;
+    private String location;
 }

@@ -1,27 +1,27 @@
-package com.yggdrasil.labo02ncapas.model;
+package com.yggdrasil.labo02ncapas.models;
 
 import jakarta.persistence.*;
-import java.util.List;
-import java.util.UUID;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Branch {
+public class Royalty {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idBranch;
+    private UUID idRoyalty;
 
     @Column
     private String name;
 
     @Column
-    private String location;
+    private String description;
+
+    @Column
+    private int pointsNeeded;
 }
